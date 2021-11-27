@@ -11,14 +11,14 @@ import (
 	"nodered-cli/model"
 )
 
-var List = cli.Command{
-	Name:   "list",
-	Usage:  "nodered label list also is project list",
+var Install = cli.Command{
+	Name:   "install, i",
+	Usage:  "install project from tar package, tar package include project necessary to run node_modules",
 	Flags:  flags.Flags,
-	Action: listAction,
+	Action: InstallAction,
 }
 
-func listAction(cli *cli.Context) {
+func InstallAction(cli *cli.Context) {
 	var (
 		flowJsonVal = make([]model.FlowItem, 0)
 		err         error

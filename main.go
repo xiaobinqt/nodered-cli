@@ -40,9 +40,11 @@ func main() {
 	}
 
 	app.Commands = []cli.Command{
-		commands.ListCmd,
+		commands.List,
+		commands.Install,
 	}
-	if err := app.Run(os.Args); err != nil {
+
+	if err = app.Run(os.Args); err != nil {
 		logrus.Fatal(err)
 	}
 }
